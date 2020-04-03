@@ -1,0 +1,19 @@
+{
+  "name": "helping-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmsmhh/Helping-Backend.git"
+  },
+  "author": "Mahmoud Saleh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmsmhh/Helping-Backend/issues"
+  },
+  "homepage": "https://github.com/mmsmhh/Helping-Backend#readme"
+}
