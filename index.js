@@ -7,6 +7,9 @@ const morgan = require('morgan');
 
 const app = express();
 
+app.use(express.static('public')); //Serves resources from public folder
+
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect(config.MONGODB_URI, { useFindAndModify: false, useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
