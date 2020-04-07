@@ -125,12 +125,20 @@ module.exports = {
 
         shoppingList.volunteer = user.id;
 
-        user.volunteeredShoppingList.push(shoppingList.id)
+        await shoppingList.save();
+
+
+        const shoppingListPopulated = await ShoppingList.findById(shoppingList.id)
+            .populate('owner', ['id', 'name', 'photo'])
+            .populate('volunteer', ['id', 'name', 'photo']);
+
 
         return res.status(200).json({
             err: null,
             msg: `Done.`,
-            data: null
+            data: {
+                shoppingList: shoppingListPopulated
+            }
         });
 
     },
@@ -139,16 +147,22 @@ module.exports = {
 
         const shoppingList = await ShoppingList.findById(req.params.id);
 
-        shoppingList.volunteer = undefined;
+        console.log(shoppingList.volunteer)
+        shoppingList.volunteer = null;
+        console.log(shoppingList.volunteer)
 
-        const index = user.volunteeredShoppingList.indexOf(shoppingList.id);
+        await shoppingList.save();
 
-        if (index !== -1) user.volunteeredShoppingList.splice(index, 1);
+        const shoppingListPopulated = await ShoppingList.findById(shoppingList.id)
+            .populate('owner', ['id', 'name', 'photo'])
+            .populate('volunteer', ['id', 'name', 'photo']);
 
         return res.status(200).json({
             err: null,
             msg: `Done.`,
-            data: null
+            data: {
+                shoppingList: shoppingListPopulated
+            }
         });
     }
 

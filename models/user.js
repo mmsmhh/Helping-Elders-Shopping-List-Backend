@@ -56,25 +56,32 @@ const userSchema = mongoose.Schema({
     },
     address: {
         floor: {
-            type: Number,
+            type: String,
+            default: ''
         },
         apartmentNumber: {
-            type: Number,
+            type: String,
+            default: ''
         },
         buildingNumber: {
-            type: Number,
+            type: String,
+            default: ''
         },
         streetName: {
             type: String,
+            default: ''
         },
         district: {
             type: String,
+            default: ''
         },
         city: {
             type: String,
+            default: ''
         },
         country: {
             type: String,
+            default: ''
         }
     },
     photo: {

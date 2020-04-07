@@ -8,8 +8,7 @@ router.route('/delete/:id').delete(shoppingListController.delete);
 router.route('/getAll/').get(shoppingListController.getAll);
 router.route('/getMyShoppingLists/:id').get(shoppingListController.getMyShoppingLists);
 router.route('/getMyVolunteerShoppingLists/:id').get(shoppingListController.getMyVolunteerShoppingLists);
-
-router.route('/buy/:id').post(shoppingListController.buy);
-router.route('/unbuy/:id').post(shoppingListController.unbuy);
+router.route('/buy/:id').get(shoppingListController.buy);
+router.route('/unbuy/:id').get(shoppingListController.unbuy);
 
 module.exports = router;

@@ -7,6 +7,7 @@ const { SNS, S3 } = require('../utils/aws');
 const config = require("../configurations");
 const randomize = require('randomatic');
 
+
 const transporter = nodemailer.createTransport({
     host: config.AWS_SMTP_HOST,
     secureConnection: true,
@@ -77,7 +78,7 @@ module.exports = {
             },
             email: {
                 value: req.body.email,
-                isVerified: false,
+                isVerified: true,
                 emailVerificationToken: newEmailVerificationToken
             },
             password: {
@@ -89,14 +90,16 @@ module.exports = {
 
         await newUser.save();
 
-        const mailoption = {
-            from: "NoReply@cyyann.com",
-            to: req.body.email,
-            subject: "Please verify your email",
-            text: `Your verification code is ${config.FRONTEND}/verify-email/${newEmailVerificationToken}.`
-        };
+        // const token = await encrypt(newUser.email.value + '$' + newEmailVerificationToken);
 
-        await transporter.sendMail(mailoption);
+        // const mailoption = {
+        //     from: "NoReply@cyyann.com",
+        //     to: req.body.email,
+        //     subject: "Please verify your email",
+        //     text: `Your verification code is ${config.FRONTEND}/verify-email/${token}.`
+        // };
+
+        // await transporter.sendMail(mailoption);
 
         return res.status(200).json({
             err: null,
@@ -133,11 +136,13 @@ module.exports = {
 
         if (!user.email.isVerified) {
 
+            const token = encrypt(user.email.value + '$' + newEmailVerificationToken);
+
             const mailoption = {
                 from: "NoReply@cyyann.com",
                 to: req.body.email,
                 subject: "Please verify your email",
-                text: `Your verification code is ${config.FRONTEND}/verify-email/${newEmailVerificationToken}.`
+                text: `Your verification code is ${config.FRONTEND}/verify-email/${token}.`
             };
 
             await transporter.sendMail(mailoption);
@@ -376,11 +381,14 @@ module.exports = {
 
             await user.save();
 
+
+            const token = encrypt(user.email.value + '$' + user.password.passwordResetToken);
+
             const mailoption = {
                 from: "NoReply@cyyann.com",
                 to: userEmail,
                 subject: "Password reset",
-                text: newPasswordResetToken.value
+                text: `to reset your password ${config.FRONTEND}/verify-email/${token}.`
             };
 
             await transporter.sendMail(mailoption);
@@ -463,12 +471,12 @@ module.exports = {
     },
     updateProfile: async (req, res) => {
 
-        await User.findByIdAndUpdate(req.user.id, req.body);
+        const user = await User.findByIdAndUpdate(req.user.id, req.body, { new: true });
 
         return res.status(200).json({
             err: null,
             msg: "Profile updated successfully!",
-            data: null
+            data: user
         });
 
     },

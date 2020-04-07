@@ -27,7 +27,6 @@ module.exports = {
             gender: Joi.string().required()
         }),
         verifyEmail: Joi.object().keys({
-            email: Joi.string().email({ minDomainSegments: 2 }).required(),
             emailVerificationToken: Joi.string().required().length(6)
         }),
         signIn: Joi.object().keys({
@@ -41,9 +40,9 @@ module.exports = {
             }),
             birthdate: Joi.date(),
             address: Joi.object().keys({
-                floor: Joi.number(),
-                apartmentNumber: Joi.number(),
-                buildingNumber: Joi.number(),
+                floor: Joi.string(),
+                apartmentNumber: Joi.string(),
+                buildingNumber: Joi.string(),
                 streetName: Joi.string(),
                 district: Joi.string(),
                 city: Joi.string(),
