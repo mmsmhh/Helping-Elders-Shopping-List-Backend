@@ -12,5 +12,6 @@ module.exports = {
     AWS_ACCESS_KEY: process.env.AWS_ACCESS_KEY,
     S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
     AWS_REGION: process.env.AWS_REGION,
-    AWS_SMTP_PORT: process.env.AWS_SMTP_PORT
+    AWS_SMTP_PORT: process.env.AWS_SMTP_PORT,
+    FRONTEND: process.env.FRONTEND
 };

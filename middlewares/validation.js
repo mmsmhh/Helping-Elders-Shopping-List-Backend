@@ -70,7 +70,7 @@ module.exports = {
             newPassword: Joi.string().required().min(8)
         })
     },
-    shoppingListSchema: {
+    shoppingListSchemas: {
         create: Joi.object().keys({
             items: Joi.array().items({
                 itemName: Joi.string(),

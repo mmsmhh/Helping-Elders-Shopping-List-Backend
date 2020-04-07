@@ -4,6 +4,6 @@ const userRoutes = require('./user');
 const shoppingListRoutes = require('./shoppingList');
 
 router.use('/user', userRoutes);
-router.use('/shoppingList', isAuthenticated, shoppingListRoutes);
+router.use('/shopping-list', isAuthenticated, shoppingListRoutes);
 
 module.exports = router;

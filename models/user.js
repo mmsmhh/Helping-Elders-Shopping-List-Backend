@@ -78,13 +78,21 @@ const userSchema = mongoose.Schema({
         }
     },
     photo: {
-        type: String
+        type: String,
+        default: 'profile-picture-436682-1586216082838.png'
     },
     gender: {
         type: String,
-        enum: ['Male', 'Female']
+        enum: ['Male', 'Female'],
+        required: true
     },
-    shoppingLists: [
+    myShoppingLists: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'ShoppingList'
+        }
+    ],
+    volunteeredShoppingList: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'ShoppingList'

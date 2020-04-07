@@ -35,6 +35,6 @@ const shoppingListSchema = mongoose.Schema({
 
 shoppingListSchema.plugin(mongoosePaginate);
 
-const User = mongoose.model('ShoppingList', shoppingListSchema);
+const ShoppingList = mongoose.model('ShoppingList', shoppingListSchema);
 
 module.exports = ShoppingList;
