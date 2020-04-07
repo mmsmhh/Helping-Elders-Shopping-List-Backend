@@ -232,7 +232,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-root"]],
       decls: 9,
       vars: 1,
-      consts: [[1, "container", "mt-5", "mb-5"], [1, "row"], [1, "col-12"], ["bdColor", "rgba(29,51,89,0.98)", "size", "medium", "color", "#fff", "type", "ball-elastic-dots", 3, "fullScreen"], [2, "color", "white"]],
+      consts: [[1, "container", "mt-5", "mb-5"], [1, "row"], [1, "col-12"], ["bdColor", "rgba(0, 0, 0, 0.8)", "size", "medium", "color", "#fff", "type", "line-scale-pulse-out", 3, "fullScreen"], [2, "color", "white"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-header");
@@ -1086,11 +1086,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function onLogOutClicked() {
           this._userService.signOut();
         }
-      }, {
-        key: "isLoggedIn",
-        value: function isLoggedIn() {
-          return this._userService.isLoggedIn();
-        }
       }]);
 
       return HeaderComponent;
@@ -1114,7 +1109,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Helping Elder");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Helping Elders");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1152,15 +1147,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isLoggedIn());
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx._userService.isLoggedIn());
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.isLoggedIn());
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx._userService.isLoggedIn());
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.isLoggedIn());
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx._userService.isLoggedIn());
         }
       },
       directives: [ngx_bootstrap_navbar__WEBPACK_IMPORTED_MODULE_2__["NgxNavbarDynamicExpandDirective"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkWithHref"], ngx_bootstrap_navbar__WEBPACK_IMPORTED_MODULE_2__["NgxNavbarCollapseComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkActive"]],
@@ -1289,7 +1284,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             _this2.toastr.success('User logged in successfully');
 
-            _this2._router.navigate(['/']);
+            window.location.href = '/';
           }, function (err) {
             _this2.toastr.error(err.error.msg);
           });
@@ -2373,7 +2368,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-profile"]],
       decls: 5,
       vars: 1,
-      consts: [[4, "ngIf"], ["updateProfile", ""], ["updatePassword", ""], [1, "card", "text-center"], [1, "card-header"], [1, "card-body"], ["width", "120px", "alt", "Profile Image", 1, "mt-3", "mb-3", 2, "border-radius", "50%", 3, "src"], [1, "card-text"], ["class", "card-text", 4, "ngIf"], [1, "btn", "btn-primary", "mr-2", 3, "click"], [1, "card-footer", "text-muted"], ["class", "row mt-3 mb-3", 4, "ngIf"], [1, "row", "mt-3", "mb-3"], [1, "col"], ["type", "pills", 3, "justified"], ["heading", "My shopping lists"], [3, "id", "type"], ["heading", "Shopping lists to buy"], [1, "modal-header"], [1, "modal-title", "pull-left"], ["type", "button", "aria-label", "Close", 1, "close", "pull-right", 3, "click"], ["aria-hidden", "true"], [1, "modal-body", 2, "max-height", "400px", "overflow-y", "scroll"], [3, "submit"], [1, "form-row"], [1, "form-group", "col-md-6"], ["for", "inputFirstName"], ["type", "text", "id", "inputFirstName", "name", "firstName", "placeholder", "First name", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputLastName"], ["type", "text", "id", "inputLastName", "name", "lastName", "placeholder", "Last name", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputGender"], ["id", "inputGender", "name", "gender", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["selected", "", "value", "Male"], ["value", "Female"], ["for", "inputBirthdate"], ["type", "date", "id", "inputBirthdate", "name", "birthdate", "placeholder", "birthdate", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputCountry"], ["type", "text", "id", "inputCountry", "name", "country", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputCity"], ["type", "text", "id", "inputCity", "name", "city", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputDistrict"], ["type", "text", "id", "inputDistrict", "name", "district", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputStreetName"], ["type", "text", "id", "inputStreetName", "name", "streetName", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "form-group", "col-md-4"], ["for", "inputBuildingNumber"], ["type", "text", "id", "inputBuildingNumber", "name", "buildingNumber", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputFloor"], ["type", "text", "id", "inputFloor", "name", "floor", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputApartmentNumber"], ["type", "text", "id", "inputApartmentNumber", "name", "apartmentNumber", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "submit", 1, "btn", "btn-primary"], [1, "form-group", "col-md-12"], ["for", "inputOldPassword"], ["type", "password", "id", "inputOldPassword", "name", "oldPassword", "placeholder", "Old password", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputPassword"], ["type", "password", "id", "inputPassword", "name", "password", "placeholder", "New password", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputConfirmPassword"], ["type", "password", "id", "inputConfirmPassword", "name", "confirmPassword", "placeholder", "Confirm New password", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"]],
+      consts: [[4, "ngIf"], ["updateProfile", ""], ["updatePassword", ""], [1, "card", "text-center"], [1, "card-header"], [1, "card-body"], ["width", "120px", "alt", "Profile Image", 1, "mt-3", "mb-3", 2, "border-radius", "50%", 3, "src"], [1, "card-text"], ["class", "card-text", 4, "ngIf"], [1, "btn", "btn-primary", "mr-2", 3, "click"], [1, "card-footer", "text-muted"], ["class", "row mt-3 mb-3", 4, "ngIf"], [1, "row", "mt-3", "mb-3"], [1, "col"], ["type", "pills", 3, "justified"], ["heading", "Owned shopping lists"], [3, "id", "type"], ["heading", "Volunteered shopping lists"], [1, "modal-header"], [1, "modal-title", "pull-left"], ["type", "button", "aria-label", "Close", 1, "close", "pull-right", 3, "click"], ["aria-hidden", "true"], [1, "modal-body", 2, "max-height", "400px", "overflow-y", "scroll"], [3, "submit"], [1, "form-row"], [1, "form-group", "col-md-6"], ["for", "inputFirstName"], ["type", "text", "id", "inputFirstName", "name", "firstName", "placeholder", "First name", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputLastName"], ["type", "text", "id", "inputLastName", "name", "lastName", "placeholder", "Last name", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputGender"], ["id", "inputGender", "name", "gender", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["selected", "", "value", "Male"], ["value", "Female"], ["for", "inputBirthdate"], ["type", "date", "id", "inputBirthdate", "name", "birthdate", "placeholder", "birthdate", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputCountry"], ["type", "text", "id", "inputCountry", "name", "country", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputCity"], ["type", "text", "id", "inputCity", "name", "city", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputDistrict"], ["type", "text", "id", "inputDistrict", "name", "district", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputStreetName"], ["type", "text", "id", "inputStreetName", "name", "streetName", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "form-group", "col-md-4"], ["for", "inputBuildingNumber"], ["type", "text", "id", "inputBuildingNumber", "name", "buildingNumber", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputFloor"], ["type", "text", "id", "inputFloor", "name", "floor", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputApartmentNumber"], ["type", "text", "id", "inputApartmentNumber", "name", "apartmentNumber", 1, "form-control", 3, "ngModel", "ngModelChange"], ["type", "submit", 1, "btn", "btn-primary"], [1, "form-group", "col-md-12"], ["for", "inputOldPassword"], ["type", "password", "id", "inputOldPassword", "name", "oldPassword", "placeholder", "Old password", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputPassword"], ["type", "password", "id", "inputPassword", "name", "password", "placeholder", "New password", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "inputConfirmPassword"], ["type", "password", "id", "inputConfirmPassword", "name", "confirmPassword", "placeholder", "Confirm New password", "required", "", 1, "form-control", 3, "ngModel", "ngModelChange"]],
       template: function ProfileComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, ProfileComponent_ng_container_0_Template, 22, 13, "ng-container", 0);
@@ -3249,18 +3244,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             var element = this.shoppingList.get('items').value[i];
 
             if (element.itemName.length < 1) {
-              this.toastr.error('Validation error!', "Item name can't be empty");
+              this.toastr.error("Item name can't be empty");
               return;
             }
 
             if (element.quantity.length < 1) {
-              this.toastr.error('Validation error!', "Quantity can't be empty");
+              this.toastr.error("Quantity can't be empty");
               return;
             }
           }
 
           if (this.shoppingList.get('notes').value.length < 1) {
-            this.toastr.error('Validation error!', "Notes can't be empty");
+            this.toastr.error("Notes can't be empty");
             return;
           }
 
@@ -3466,7 +3461,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return ctx_r54.onBuy(ctx_r54.shoppingList == null ? null : ctx_r54.shoppingList._id);
         });
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Help buying this list ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " volunteer ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "fa-icon", 19);
 
@@ -3488,7 +3483,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 24);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " No one has clicked to help you ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " No one has volunteered yet ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
@@ -3504,7 +3499,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " will buy this shopping list for you ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " volunteered ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
@@ -3538,7 +3533,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return ctx_r56.onUnBuy(ctx_r56.shoppingList == null ? null : ctx_r56.shoppingList._id);
         });
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Can't help buying this list ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " revoke volunteering ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "fa-icon", 19);
 
@@ -3552,7 +3547,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx_r50.faShoppingCart);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("icon", ctx_r50.faEraser);
       }
     }
 
@@ -3566,6 +3561,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.faTrash = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faTrash"];
         this.faPlus = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faPlus"];
         this.faShoppingCart = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faShoppingCart"];
+        this.faEraser = _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faEraser"];
       }
 
       _createClass(ShoppingListComponent, [{
@@ -4072,7 +4068,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           this.updateSubArray();
 
           this._shoppingListService.deleteShoppingList(id).subscribe(function (res) {
-            _this8.toastr.success('Done', 'Shopping list deleted succesfully');
+            _this8.toastr.success('Shopping list deleted succesfully!');
           }, function (err) {
             _this8.toastr.error(err.error.msg);
           });
@@ -4083,11 +4079,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this9 = this;
 
           this._shoppingListService.create(shoppingList).subscribe(function (res) {
-            _this9.shoppingLists.push(res.data.shoppingList);
+            _this9.shoppingLists.unshift(res.data.shoppingList);
 
             _this9.updateSubArray();
 
-            _this9.toastr.success('Done', 'Shopping list added succesfully');
+            _this9.toastr.success('Shopping list created succesfully!');
           }, function (err) {
             _this9.toastr.error(err.error.msg);
           });
@@ -4107,7 +4103,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             _this10.updateSubArray();
 
-            _this10.toastr.success('Done', 'Shopping list assigned succesfully');
+            _this10.toastr.success('You have successfully volunteered!');
           }, function (err) {
             _this10.toastr.error(err.error.msg);
           });
@@ -4132,7 +4128,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
             _this11.updateSubArray();
 
-            _this11.toastr.success('Done', 'Shopping list unassigned succesfully');
+            _this11.toastr.success('You have successfully revoked volunteering!');
           }, function (err) {
             _this11.toastr.error(err.error.msg);
           });
@@ -4455,7 +4451,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-user"]],
       decls: 1,
       vars: 1,
-      consts: [[4, "ngIf"], [1, "card", "text-center"], [1, "card-header"], [1, "card-body"], ["width", "120px", "alt", "Profile Image", 1, "mt-3", "mb-3", 2, "border-radius", "50%", 3, "src"], [1, "card-text"], [1, "card-footer", "text-muted"], ["class", "row mt-3 mb-3", 4, "ngIf"], [1, "row", "mt-3", "mb-3"], [1, "col"], ["type", "pills", 3, "justified"], ["heading", "shopping lists by this user"], [3, "id", "type"], ["heading", "Shopping lists this user will buy"]],
+      consts: [[4, "ngIf"], [1, "card", "text-center"], [1, "card-header"], [1, "card-body"], ["width", "120px", "alt", "Profile Image", 1, "mt-3", "mb-3", 2, "border-radius", "50%", 3, "src"], [1, "card-text"], [1, "card-footer", "text-muted"], ["class", "row mt-3 mb-3", 4, "ngIf"], [1, "row", "mt-3", "mb-3"], [1, "col"], ["type", "pills", 3, "justified"], ["heading", "Owned shopping lists"], [3, "id", "type"], ["heading", "Volunteered shopping lists"]],
       template: function UserComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, UserComponent_ng_container_0_Template, 17, 12, "ng-container", 0);
@@ -5036,7 +5032,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 
@@ -5046,6 +5048,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.http = http;
         this._router = _router;
+        this.itemValue = new rxjs__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
       }
 
       _createClass(UserService, [{
@@ -5072,6 +5075,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "signOut",
         value: function signOut() {
           localStorage.removeItem(_configurations__WEBPACK_IMPORTED_MODULE_2__["AUTH_TOKEN"]);
+          this.itemValue.next("");
 
           this._router.navigate(['/login']);
         }
@@ -5112,6 +5116,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function saveUser(token, id) {
           localStorage.setItem(_configurations__WEBPACK_IMPORTED_MODULE_2__["AUTH_TOKEN"], token);
           localStorage.setItem(_configurations__WEBPACK_IMPORTED_MODULE_2__["USER_ID"], id);
+          this.itemValue.next(token);
         }
       }, {
         key: "verifyEmail",
@@ -5171,7 +5176,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     UserService.ɵfac = function UserService_Factory(t) {
-      return new (t || UserService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]));
+      return new (t || UserService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]));
     };
 
     UserService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -5191,7 +5196,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return [{
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
         }, {
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
         }];
       }, null);
     })();

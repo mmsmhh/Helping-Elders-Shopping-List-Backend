@@ -38,7 +38,8 @@ module.exports = {
             limit: 10,
         };
 
-        const shoppingLists = await ShoppingList.find({}).populate('owner', ['id', 'name', 'photo']).populate('volunteer', ['id', 'name', 'photo']);
+        const shoppingLists = await ShoppingList.find({}).sort({ createdAt: -1 }).populate('owner', ['id', 'name', 'photo']).populate('volunteer', ['id', 'name', 'photo']);
+
 
         return res.status(200).json({
             err: null,
@@ -55,7 +56,7 @@ module.exports = {
             owner: req.params.id
         }
 
-        const shoppingLists = await ShoppingList.find(query)
+        const shoppingLists = await ShoppingList.find(query).sort({ createdAt: -1 })
             .populate('owner', ['id', 'name', 'photo'])
             .populate('volunteer', ['id', 'name', 'photo']);
 
@@ -75,7 +76,7 @@ module.exports = {
             volunteer: req.params.id
         }
 
-        const shoppingLists = await ShoppingList.find(query)
+        const shoppingLists = await ShoppingList.find(query).sort({ createdAt: -1 })
             .populate('owner', ['id', 'name', 'photo'])
             .populate('volunteer', ['id', 'name', 'photo']);
 

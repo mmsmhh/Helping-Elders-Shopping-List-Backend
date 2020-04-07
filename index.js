@@ -7,8 +7,7 @@ const morgan = require('morgan');
 
 const app = express();
 
-app.use(express.static('public')); //Serves resources from public folder
-
+app.use(express.static('public'));
 
 mongoose.Promise = global.Promise;
 
