@@ -4650,7 +4650,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return USER_ID;
     });
 
-    var URL = 'http://localhost:3000';
+    var URL = '';
     var AUTH_TOKEN = 'Authentication';
     var USER_ID = 'UserId';
     /***/
