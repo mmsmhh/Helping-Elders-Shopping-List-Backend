@@ -527,8 +527,6 @@ module.exports = {
     },
     getUser: async (req, res) => {
 
-        console.log(req.params)
-
         const user = await User.findById(req.params.id);
 
         delete user.email;

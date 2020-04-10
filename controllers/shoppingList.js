@@ -148,9 +148,7 @@ module.exports = {
 
         const shoppingList = await ShoppingList.findById(req.params.id);
 
-        console.log(shoppingList.volunteer)
         shoppingList.volunteer = null;
-        console.log(shoppingList.volunteer)
 
         await shoppingList.save();
 
