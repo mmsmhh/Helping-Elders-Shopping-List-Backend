@@ -4,8 +4,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodayParser = require('body-parser');
 const morgan = require('morgan');
+const compression = require('compression')
 
 const app = express();
+app.use(compression())
 
 app.use(express.static('public'));
 
